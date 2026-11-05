@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="500" viewBox="0 0 400 500" role="img" aria-label="Imagen no disponible">
+    <!-- Fondo beige de la marca -->
+    <rect width="400" height="500" fill="#E8E2D2"/>
+    <!-- Marco negro -->
+    <rect x="20" y="20" width="360" height="460" fill="none" stroke="#1A1A1A" stroke-width="3"/>
+    <!-- Nombre de la marca -->
+    <text x="200" y="240" text-anchor="middle" font-family="Montserrat, Arial, sans-serif" font-size="24" font-weight="700" letter-spacing="6" fill="#1A1A1A">KANDRE</text>
+    <!-- Aviso -->
+    <text x="200" y="278" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" letter-spacing="3" fill="#686B6B">FOTO PENDIENTE</text>
+</svg>

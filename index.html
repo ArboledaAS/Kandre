@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KANDRE | Minimalist Clothing</title>
+    <meta name="description" content="KANDRE: ropa deportiva minimalista. Leggins, shorts y chaquetas de producción local. Tu estilo, sin límites.">
+
+    <!-- Tipografía oficial de la marca -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- HEADER: Barra de navegación superior       -->
+    <!-- ========================================== -->
+    <header>
+        <div class="logo-container">
+            <!-- REEMPLAZA EL TEXTO POR TU IMAGEN PNG DEL LOGO -->
+            <!-- Ejemplo: <img src="img/logo-kandre.png" alt="KANDRE Logo" style="height: 50px;"> -->
+            <a href="index.html">KANDRE</a>
+        </div>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html" class="active" aria-current="page">Inicio</a></li>
+                <li><a href="index.html#coleccion">Colección</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- HERO SECTION: Mensaje principal            -->
+    <!-- ========================================== -->
+    <section class="hero">
+        <h1>KANDRE</h1>
+        <p>Tu estilo, sin límites</p>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- CATÁLOGO: Grilla de productos              -->
+    <!-- ========================================== -->
+    <!--
+        IMPORTANTE: las tarjetas ya NO se escriben a mano aquí.
+        Se generan con JavaScript a partir de tres archivos:
+
+          · js/productos.js  -> DATOS de cada prenda (nombre, precio,
+                                colores, imágenes y descripción).
+          · js/main.js       -> utilidades (formato de precio, avisos).
+          · js/catalogo.js   -> construye el HTML, filtros y galería.
+
+        Para agregar, quitar o editar una prenda solo se toca
+        js/productos.js. Este bloque únicamente define los
+        contenedores donde se pinta el catálogo.
+    -->
+    <section class="catalog" id="coleccion">
+        <div class="catalog-header">
+            <h2>Colección Deportiva</h2>
+            <p class="catalog-sub">Filtra por categoría y elige el color que más te guste.</p>
+        </div>
+
+        <!--
+            FILTROS: botones "Todas / Leggins / Shorts / Chaquetas".
+            Se generan automáticamente según las categorías usadas
+            en js/productos.js. No borres este contenedor.
+        -->
+        <div class="catalog-filters" id="catalog-filters" aria-label="Filtrar productos por categoría"></div>
+
+        <!--
+            GRILLA: contenedor vacío. js/catalogo.js inyecta aquí
+            una tarjeta por cada producto de js/productos.js.
+        -->
+        <div class="product-grid" id="product-grid"></div>
+
+        <!-- Mensaje para navegadores sin JavaScript activado -->
+        <noscript>
+            <p class="catalog-noscript">
+                Para ver el catálogo necesitas activar JavaScript en tu navegador.
+                También puedes escribirnos desde la página de contacto.
+            </p>
+        </noscript>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FOOTER: Pie de página                      -->
+    <!-- ========================================== -->
+    <footer>
+        <p>&copy; 2024 KANDRE. Estilo sin límites.</p>
+        <p class="footer-sub">Kendry &amp; Andrés</p>
+        <nav class="footer-nav" aria-label="Navegación del pie de página">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#coleccion">Colección</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </footer>
+
+    <!-- ========================================== -->
+    <!-- SCRIPTS: el orden de carga es importante   -->
+    <!-- ========================================== -->
+    <!-- 1) Utilidades compartidas (KANDRE.*) -->
+    <script src="js/main.js"></script>
+    <!-- 2) Datos de las prendas (PRODUCTOS) -->
+    <script src="js/productos.js"></script>
+    <!-- 3) Motor que construye el catálogo -->
+    <script src="js/catalogo.js"></script>
+</body>
+</html>

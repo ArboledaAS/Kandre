@@ -1,0 +1,1303 @@
+/* ==========================================
+   VARIABLES DE MARCA (Brand Board)
+   ========================================== */
+:root {
+    --beige: #E8E2D2;  /* Beige principal (sofisticación) */
+    --negro: #1A1A1A;  /* Negro principal (elegancia) */
+    --cafe: #9A7B63;   /* Acento cálido (versatilidad) */
+    --gris: #686B6B;   /* Acento neutro (equilibrio) */
+    --blanco: #FFFFFF;
+}
+
+/* ==========================================
+   RESETEO Y ESTILOS BASE
+   ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--beige);
+    color: var(--negro);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+    color: var(--negro);
+}
+
+/* ==========================================
+   HEADER Y NAVEGACIÓN
+   ========================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 5%;
+    border-bottom: 2px solid var(--negro);
+}
+
+.logo-container {
+    font-weight: 900;
+    font-size: 2rem;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.logo-container img {
+    max-height: 50px; /* Ajusta esto según tu PNG */
+    width: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+nav ul li a {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--cafe);
+}
+
+/* ==========================================
+   HERO SECTION (Portada)
+   ========================================== */
+.hero {
+    padding: 8rem 5%;
+    text-align: center;
+    border-bottom: 2px solid var(--negro);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    margin-bottom: 1rem;
+    line-height: 1;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: var(--cafe);
+}
+
+/* ==========================================
+   CATÁLOGO Y GRILLA DE PRODUCTOS
+   ========================================== */
+.catalog {
+    padding: 5rem 5%;
+}
+
+.catalog-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.catalog-header h2 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--negro);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.product-grid {
+    display: grid;
+    /* Crea columnas responsivas automáticamente */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+}
+
+/* ==========================================
+   TARJETA DE PRODUCTO INDIVIDUAL
+   ========================================== */
+.product-card {
+    background-color: var(--blanco);
+    border: 2px solid var(--negro);
+    padding: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 0px var(--negro); /* Sombra estilo brutalista minimalista */
+}
+
+.image-container {
+    width: 100%;
+    height: 400px;
+    background-color: #f4f4f4;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Hace que la imagen llene el espacio sin deformarse */
+    transition: transform 0.5s ease;
+}
+
+.product-card:hover .image-container img {
+    transform: scale(1.05); /* Efecto zoom sutil al pasar el mouse */
+}
+
+.product-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.product-desc {
+    font-size: 0.9rem;
+    color: var(--gris);
+    margin-bottom: 1rem;
+    min-height: 45px;
+}
+
+.product-price {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+/* ==========================================
+   SELECTOR DE COLORES INTERACTIVO
+   ========================================== */
+.color-selector {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0.5rem;
+}
+
+.color-btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Estado activo cuando el usuario hace clic */
+.color-btn.active {
+    border: 2px solid var(--blanco);
+    outline: 2px solid var(--negro);
+    transform: scale(1.1);
+}
+
+.color-display {
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    color: var(--gris);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ==========================================
+   BOTÓN DE COMPRA
+   ========================================== */
+.btn-add {
+    width: 100%;
+    padding: 1rem;
+    background-color: var(--negro);
+    color: var(--beige);
+    border: none;
+    font-family: inherit;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-add:hover {
+    background-color: var(--cafe);
+    color: var(--blanco);
+}
+
+/* ==========================================
+   FOOTER
+   ========================================== */
+footer {
+    text-align: center;
+    padding: 3rem 5%;
+    border-top: 2px solid var(--negro);
+    margin-top: 4rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.footer-sub {
+    margin-top: 10px;
+    font-size: 0.7rem;
+    color: var(--gris);
+}
+
+/* ==========================================
+   RESPONSIVE (Para móviles y tablets)
+   ========================================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem;
+    }
+
+    nav ul {
+        gap: 1rem;
+    }
+
+    .hero h1 {
+        font-size: 2.5rem;
+        letter-spacing: 5px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Una sola columna en móviles */
+    }
+}
+
+/* ==========================================
+   PÁGINAS INTERNAS: NOSOTROS Y CONTACTO
+   ========================================== */
+
+/* --- Logo y navegación compartida --- */
+.logo-container a {
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.logo-container a:hover {
+    color: var(--cafe);
+}
+
+nav ul li a.active {
+    color: var(--cafe);
+    border-bottom: 2px solid var(--cafe);
+    padding-bottom: 4px;
+}
+
+/* --- Encabezado de página interna --- */
+.page-hero {
+    padding: 5rem 5%;
+    text-align: center;
+    border-bottom: 2px solid var(--negro);
+}
+
+.page-kicker {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--cafe);
+    margin-bottom: 1rem;
+}
+
+.page-hero h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 8px;
+    line-height: 1;
+    margin-bottom: 1.25rem;
+}
+
+.page-hero .lead {
+    max-width: 640px;
+    margin: 0 auto;
+    color: var(--gris);
+    font-size: 0.95rem;
+}
+
+/* --- Secciones genéricas --- */
+.section {
+    padding: 5rem 5%;
+}
+
+.section-alt {
+    background-color: var(--blanco);
+    border-top: 2px solid var(--negro);
+    border-bottom: 2px solid var(--negro);
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    border-bottom: 3px solid var(--negro);
+    display: inline-block;
+    padding-bottom: 0.5rem;
+}
+
+.section-header p {
+    max-width: 620px;
+    margin: 1rem auto 0;
+    color: var(--gris);
+    font-size: 0.95rem;
+}
+
+/* --- Botones genéricos --- */
+.btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border: 2px solid var(--negro);
+    background-color: transparent;
+    color: var(--negro);
+    font-family: inherit;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--negro);
+    color: var(--beige);
+}
+
+.btn-solid {
+    background-color: var(--negro);
+    color: var(--beige);
+}
+
+.btn-solid:hover {
+    background-color: var(--cafe);
+    border-color: var(--cafe);
+    color: var(--blanco);
+}
+
+.btn-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ==========================================
+   PÁGINA NOSOTROS
+   ========================================== */
+
+/* --- Historia y manifiesto --- */
+.story-grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.story-text h2 {
+    font-size: 1.9rem;
+    font-weight: 900;
+    line-height: 1.2;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.story-text p {
+    color: var(--gris);
+    font-size: 0.95rem;
+    margin-bottom: 1.1rem;
+}
+
+.story-text p strong {
+    color: var(--negro);
+}
+
+.manifesto-card {
+    background-color: var(--negro);
+    color: var(--beige);
+    border: 2px solid var(--negro);
+    padding: 2.5rem;
+    box-shadow: 12px 12px 0 var(--cafe);
+    position: sticky;
+    top: 2rem;
+}
+
+.manifesto-card .manifesto-tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cafe);
+    margin-bottom: 1rem;
+}
+
+.manifesto-card .manifesto-text {
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.45;
+    margin-bottom: 1.5rem;
+}
+
+.manifesto-card ul {
+    list-style: none;
+    border-top: 1px solid rgba(232, 226, 210, 0.25);
+    padding-top: 1.25rem;
+}
+
+.manifesto-card li {
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(232, 226, 210, 0.12);
+}
+
+.manifesto-card li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+/* --- Cifras --- */
+.stats-band {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    background-color: var(--negro);
+    border-bottom: 2px solid var(--negro);
+}
+
+.stat {
+    background-color: var(--beige);
+    padding: 2.5rem 1.5rem;
+    text-align: center;
+}
+
+.stat strong {
+    display: block;
+    font-size: 2.25rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    line-height: 1;
+    margin-bottom: 0.6rem;
+}
+
+.stat span {
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--gris);
+}
+
+/* --- Valores --- */
+.pillar-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.pillar-card {
+    background-color: var(--blanco);
+    border: 2px solid var(--negro);
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pillar-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 10px 10px 0 var(--negro);
+}
+
+.pillar-number {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--cafe);
+}
+
+.pillar-card h3 {
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0.75rem 0;
+}
+
+.pillar-card p {
+    font-size: 0.88rem;
+    color: var(--gris);
+}
+
+/* --- Misión y visión --- */
+.mission-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.mission-card {
+    background-color: var(--negro);
+    color: var(--beige);
+    border: 2px solid var(--negro);
+    padding: 2.5rem;
+}
+
+.mission-card h3 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cafe);
+    margin-bottom: 1rem;
+}
+
+.mission-card p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+}
+
+/* --- Proceso --- */
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2.5rem;
+}
+
+.step-card {
+    border-top: 3px solid var(--negro);
+    padding-top: 1.5rem;
+}
+
+.step-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--negro);
+    letter-spacing: 2px;
+}
+
+.step-card h3 {
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 1rem 0 0.6rem;
+}
+
+.step-card p {
+    font-size: 0.88rem;
+    color: var(--gris);
+}
+
+/* --- Fundadores --- */
+.founder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.founder-card {
+    background-color: var(--blanco);
+    border: 2px solid var(--negro);
+    padding: 2rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+}
+
+.founder-avatar {
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    border: 2px solid var(--negro);
+    border-radius: 50%;
+    background-color: var(--beige);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.founder-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.founder-role {
+    font-size: 0.7rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cafe);
+    margin-top: 0.25rem;
+}
+
+.founder-card blockquote {
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--gris);
+    border-left: 3px solid var(--cafe);
+    padding-left: 1rem;
+    margin-top: 1rem;
+}
+
+/* --- Banda final (CTA) --- */
+.cta-band {
+    background-color: var(--negro);
+    color: var(--beige);
+    padding: 4.5rem 5%;
+    text-align: center;
+    border-top: 2px solid var(--negro);
+}
+
+.cta-band h2 {
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.cta-band p {
+    color: #CFCCC4;
+    font-size: 0.95rem;
+    margin-bottom: 2rem;
+}
+
+.cta-band .btn {
+    border-color: var(--beige);
+    color: var(--beige);
+}
+
+.cta-band .btn:hover {
+    background-color: var(--beige);
+    color: var(--negro);
+}
+
+.cta-band .btn-solid {
+    background-color: var(--beige);
+    border-color: var(--beige);
+    color: var(--negro);
+}
+
+.cta-band .btn-solid:hover {
+    background-color: var(--cafe);
+    border-color: var(--cafe);
+    color: var(--blanco);
+}
+
+/* ==========================================
+   PÁGINA CONTACTO
+   ========================================== */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.contact-form {
+    background-color: var(--blanco);
+    border: 2px solid var(--negro);
+    padding: 2.5rem;
+    box-shadow: 12px 12px 0 var(--cafe);
+}
+
+.contact-form h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.75rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.25rem;
+}
+
+.form-group label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--negro);
+    background-color: var(--blanco);
+    border: 2px solid var(--negro);
+    border-radius: 0;
+    padding: 0.85rem 1rem;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-group select {
+    appearance: none;
+    background-image: linear-gradient(45deg, transparent 50%, var(--negro) 50%), linear-gradient(135deg, var(--negro) 50%, transparent 50%);
+    background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%;
+    background-size: 6px 6px, 6px 6px;
+    background-repeat: no-repeat;
+    padding-right: 2.5rem;
+    cursor: pointer;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--cafe);
+    box-shadow: 4px 4px 0 var(--cafe);
+}
+
+.form-group.invalid input,
+.form-group.invalid select,
+.form-group.invalid textarea {
+    border-color: #B3261E;
+}
+
+.field-error {
+    display: none;
+    margin-top: 0.4rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.5px;
+    color: #B3261E;
+}
+
+.form-group.invalid .field-error {
+    display: block;
+}
+
+.checkbox-group {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    padding: 0;
+    accent-color: var(--negro);
+    cursor: pointer;
+}
+
+.checkbox-group label {
+    flex: 1;
+    margin-bottom: 0;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+    text-transform: none;
+    color: var(--gris);
+}
+
+.checkbox-group .field-error {
+    flex-basis: 100%;
+}
+
+.form-note {
+    font-size: 0.72rem;
+    color: var(--gris);
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.form-status {
+    display: none;
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--negro);
+    background-color: var(--beige);
+    font-size: 0.85rem;
+}
+
+.form-status.show {
+    display: block;
+}
+
+.form-status.error {
+    border-color: #B3261E;
+    color: #B3261E;
+}
+
+/* --- Datos de contacto --- */
+.contact-info h2 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+}
+
+.info-block {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--negro);
+}
+
+.info-block:first-of-type {
+    padding-top: 0;
+}
+
+.info-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--cafe);
+    margin-bottom: 0.35rem;
+}
+
+.info-value {
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.info-value a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+}
+
+.info-value a:hover {
+    color: var(--cafe);
+}
+
+.info-extra {
+    font-size: 0.8rem;
+    color: var(--gris);
+    margin-top: 0.25rem;
+}
+
+.social-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    border: 2px solid var(--negro);
+    padding: 0.6rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--negro);
+    color: var(--beige);
+}
+
+/* --- Mapa --- */
+.map-frame {
+    border: 2px solid var(--negro);
+    min-height: 320px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    background-image: repeating-linear-gradient(
+        45deg,
+        var(--blanco),
+        var(--blanco) 14px,
+        #F1ECE0 14px,
+        #F1ECE0 28px
+    );
+}
+
+.map-frame p {
+    max-width: 460px;
+    font-size: 0.78rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+}
+
+.map-frame iframe {
+    width: 100%;
+    min-height: 320px;
+    border: 0;
+}
+
+/* --- Preguntas frecuentes --- */
+.faq {
+    max-width: 860px;
+    margin: 0 auto;
+    border-top: 2px solid var(--negro);
+}
+
+.faq details {
+    border-bottom: 1px solid var(--negro);
+    padding: 1.25rem 0;
+}
+
+.faq summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: "+";
+    font-size: 1.3rem;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.faq details[open] summary::after {
+    content: "\2212";
+}
+
+.faq p {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--gris);
+}
+
+/* --- Pie de página compartido --- */
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.25rem;
+}
+
+.footer-nav a {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gris);
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--negro);
+}
+
+/* --- Responsive de páginas internas --- */
+@media (max-width: 1024px) {
+    .story-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+
+    .manifesto-card {
+        position: static;
+    }
+
+    .stats-band {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 3.5rem 5%;
+    }
+
+    .page-hero h1 {
+        font-size: 2.1rem;
+        letter-spacing: 5px;
+    }
+
+    .section {
+        padding: 3.5rem 5%;
+    }
+
+    .story-text h2 {
+        font-size: 1.4rem;
+    }
+
+    .manifesto-card,
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .manifesto-card {
+        box-shadow: 8px 8px 0 var(--cafe);
+    }
+
+    .contact-form {
+        box-shadow: 8px 8px 0 var(--cafe);
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .stats-band {
+        grid-template-columns: 1fr;
+    }
+
+    .cta-band h2 {
+        font-size: 1.4rem;
+        letter-spacing: 2px;
+    }
+
+    .founder-card {
+        flex-direction: column;
+    }
+
+    .footer-nav {
+        gap: 1rem;
+    }
+}
+
+/* ==========================================
+   CATÁLOGO DINÁMICO
+   Estilos que usan las tarjetas generadas por
+   js/catalogo.js (filtros, miniaturas, avisos).
+   ========================================== */
+
+/* --- Subtítulo bajo "Colección Deportiva" --- */
+.catalog-sub {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: var(--gris);
+}
+
+/* --- Botones de filtro por categoría --- */
+.catalog-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    font-family: inherit;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.65rem 1.4rem;
+    border: 2px solid var(--negro);
+    background-color: transparent;
+    color: var(--negro);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background-color: var(--negro);
+    color: var(--beige);
+}
+
+/* --- Etiqueta sobre la foto ("Nuevo", "Más vendido"...) --- */
+.image-container {
+    position: relative;
+}
+
+.product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    background-color: var(--negro);
+    color: var(--beige);
+    font-size: 0.6rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.4rem 0.7rem;
+}
+
+/* --- Galería: fila de miniaturas --- */
+.thumb-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Si el color solo tiene una foto, la fila queda vacía y se oculta */
+.thumb-row:empty {
+    display: none;
+}
+
+.thumb-btn {
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    border: 2px solid transparent;
+    background-color: var(--blanco);
+    cursor: pointer;
+    overflow: hidden;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.thumb-btn img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.thumb-btn:hover {
+    transform: translateY(-2px);
+}
+
+.thumb-btn.active {
+    border-color: var(--negro);
+}
+
+/* --- Descripción pendiente de escribir --- */
+.product-desc.is-empty {
+    font-style: italic;
+    border: 1px dashed var(--gris);
+    padding: 0.5rem 0.75rem;
+}
+
+/* --- Aviso flotante al añadir al carrito --- */
+.toast {
+    position: fixed;
+    left: 50%;
+    bottom: 2rem;
+    z-index: 50;
+    max-width: 90vw;
+    padding: 1rem 1.5rem;
+    background-color: var(--negro);
+    color: var(--beige);
+    border: 2px solid var(--negro);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 1.5rem);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+}
+
+/* --- Mensajes de catálogo vacío / sin JavaScript --- */
+.catalog-empty,
+.catalog-noscript {
+    grid-column: 1 / -1;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 2px dashed var(--gris);
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--gris);
+}
+
+/* Las tarjetas filtradas se ocultan (atributo puesto por JS) */
+.product-card[hidden] {
+    display: none;
+}
+
+/* --- Ajustes para móviles --- */
+@media (max-width: 768px) {
+    .catalog-filters {
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .filter-btn {
+        padding: 0.55rem 1rem;
+        font-size: 0.65rem;
+    }
+
+    .thumb-btn {
+        width: 48px;
+        height: 48px;
+    }
+
+    .toast {
+        bottom: 1rem;
+        font-size: 0.7rem;
+    }
+}

@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | KANDRE</title>
+    <meta name="description" content="Escríbenos: pedidos, dudas de tallas, cambios y colaboraciones. KANDRE responde en menos de 24 horas hábiles.">
+
+    <!-- Tipografía oficial de la marca -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <!-- Enlace al archivo de estilos CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <!-- ========================================== -->
+    <!-- HEADER: Barra de navegación superior       -->
+    <!-- ========================================== -->
+    <header>
+        <div class="logo-container">
+            <!-- REEMPLAZA EL TEXTO POR TU IMAGEN PNG DEL LOGO -->
+            <a href="index.html">KANDRE</a>
+        </div>
+        <nav aria-label="Navegación principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html#coleccion">Colección</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="contacto.html" class="active" aria-current="page">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- ENCABEZADO DE LA PÁGINA                    -->
+    <!-- ========================================== -->
+    <section class="page-hero">
+        <p class="page-kicker">Hablemos</p>
+        <h1>Contacto</h1>
+        <p class="lead">
+            Escríbenos por el canal que prefieras. Respondemos pedidos, dudas de
+            tallas, cambios y colaboraciones en menos de 24 horas hábiles.
+        </p>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FORMULARIO + DATOS DE CONTACTO             -->
+    <!-- ========================================== -->
+    <section class="section" id="escribenos">
+        <div class="contact-grid">
+
+            <!-- FORMULARIO -->
+            <div class="contact-form">
+                <h2>Envíanos un mensaje</h2>
+
+                <!--
+                    =======================================================
+                    CÓMO ACTIVAR EL ENVÍO REAL
+                    =======================================================
+                    Este formulario valida los datos con js/contacto.js y, por
+                    defecto, abre tu aplicación de correo (mailto) con el mensaje
+                    listo para enviar.
+
+                    Si prefieres un envío automático, crea una cuenta gratuita en
+                    Formspree (o Netlify Forms) y pega tu endpoint así:
+
+                        <form id="contact-form" data-endpoint="https://formspree.io/f/TU_ID">
+
+                    El script detectará el endpoint y enviará el formulario por
+                    fetch sin recargar la página. Los campos name="" ya están
+                    listos para cualquier servicio.
+                -->
+                <form id="contact-form" action="#" method="post" data-endpoint="" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombre">Nombre completo *</label>
+                            <input type="text" id="nombre" name="nombre" autocomplete="name" required aria-describedby="err-nombre">
+                            <span class="field-error" id="err-nombre" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo electrónico *</label>
+                            <input type="email" id="email" name="email" autocomplete="email" required aria-describedby="err-email">
+                            <span class="field-error" id="err-email" role="alert"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="telefono">Teléfono (opcional)</label>
+                            <input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="+57 300 000 0000" aria-describedby="err-telefono">
+                            <span class="field-error" id="err-telefono" role="alert"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="asunto">Asunto *</label>
+                            <select id="asunto" name="asunto" required aria-describedby="err-asunto">
+                                <option value="">Selecciona una opción</option>
+                                <option value="Pedido">Estado de mi pedido</option>
+                                <option value="Tallas">Duda de tallas</option>
+                                <option value="Cambios">Cambios y devoluciones</option>
+                                <option value="Colaboración">Colaboración o prensa</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                            <span class="field-error" id="err-asunto" role="alert"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje *</label>
+                        <textarea id="mensaje" name="mensaje" required placeholder="Cuéntanos qué necesitas. Si es por un pedido, incluye tu número de orden." aria-describedby="err-mensaje"></textarea>
+                        <span class="field-error" id="err-mensaje" role="alert"></span>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="acepto" name="acepto" value="si" required aria-describedby="err-acepto">
+                        <label for="acepto">
+                            Autorizo el tratamiento de mis datos personales para recibir
+                            respuesta a este mensaje.
+                        </label>
+                        <span class="field-error" id="err-acepto" role="alert"></span>
+                    </div>
+
+                    <button type="submit" class="btn-add">Enviar mensaje</button>
+
+                    <p class="form-note">
+                        * Campos obligatorios. Nunca compartimos tus datos con terceros.
+                    </p>
+
+                    <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
+                </form>
+            </div>
+
+            <!-- DATOS DE CONTACTO -->
+            <div class="contact-info">
+                <h2>Datos de contacto</h2>
+
+                <!-- REEMPLAZA ESTOS DATOS CON LOS REALES DE KANDRE -->
+                <div class="info-block">
+                    <p class="info-label">WhatsApp</p>
+                    <p class="info-value">
+                        <a href="https://wa.me/573001234567" target="_blank" rel="noopener">+57 300 123 4567</a>
+                    </p>
+                    <p class="info-extra">Pedidos, tallas y envíos. Lun&ndash;Vie, 9:00&ndash;18:00.</p>
+                </div>
+
+                <div class="info-block">
+                    <p class="info-label">Correo</p>
+                    <p class="info-value">
+                        <a href="mailto:hola@kandre.com">hola@kandre.com</a>
+                    </p>
+                    <p class="info-extra">Cambios, facturación y colaboraciones.</p>
+                </div>
+
+                <div class="info-block">
+                    <p class="info-label">Ubicación</p>
+                    <p class="info-value">Bogotá D.C., Colombia</p>
+                    <p class="info-extra">Envíos a todo el país.</p>
+                </div>
+
+                <div class="info-block">
+                    <p class="info-label">Horario de atención</p>
+                    <p class="info-value">Lun&ndash;Vie 9:00&ndash;18:00</p>
+                    <p class="info-extra">Sábados 9:00&ndash;13:00 / Hora Colombia (GMT-5)</p>
+                </div>
+
+                <div class="social-row">
+                    <a href="https://instagram.com/" target="_blank" rel="noopener" class="social-link">Instagram</a>
+                    <a href="https://tiktok.com/" target="_blank" rel="noopener" class="social-link">TikTok</a>
+                    <a href="https://wa.me/573001234567" target="_blank" rel="noopener" class="social-link">WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- MAPA / VISÍTANOS                            -->
+    <!-- ========================================== -->
+    <section class="section section-alt" id="ubicacion">
+        <div class="section-header">
+            <h2>Visítanos</h2>
+            <p>
+                Atendemos con cita previa. Escríbenos por WhatsApp para confirmar
+                disponibilidad antes de venir.
+            </p>
+        </div>
+
+        <!--
+            MAPA: reemplaza este div por el iframe de Google Maps de tu dirección.
+            Ejemplo:
+            <iframe src="https://www.google.com/maps?q=TU+DIRECCION&output=embed"
+                    title="Ubicación de KANDRE" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        -->
+        <div class="map-frame">
+            <p>
+                Espacio para el mapa &mdash; Cra. 00 #00-00, Bogotá D.C.
+                <br>
+                Reemplaza este bloque por el iframe de Google Maps.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- PREGUNTAS FRECUENTES                       -->
+    <!-- ========================================== -->
+    <section class="section" id="preguntas">
+        <div class="section-header">
+            <h2>Preguntas frecuentes</h2>
+            <p>Si tu duda no está aquí, escríbenos y la resolvemos.</p>
+        </div>
+
+        <div class="faq">
+            <details>
+                <summary>¿Hacen envíos a todo el país?</summary>
+                <p>
+                    Sí. Enviamos a toda Colombia con transportadoras aliadas. En Bogotá
+                    también ofrecemos entrega el mismo día para pedidos confirmados antes
+                    de las 12:00 m.
+                </p>
+            </details>
+
+            <details>
+                <summary>¿Cuánto demora mi pedido?</summary>
+                <p>
+                    Entre 1 y 3 días hábiles en ciudades principales y hasta 5 días
+                    hábiles en municipios. Te enviamos el número de guía en cuanto tu
+                    paquete sale del taller.
+                </p>
+            </details>
+
+            <details>
+                <summary>¿Puedo cambiar la talla?</summary>
+                <p>
+                    Sí. Tienes 5 días calendario desde que recibes tu pedido para
+                    solicitar el cambio, siempre que la prenda esté sin uso, con etiquetas
+                    y en su empaque original. Escríbenos por WhatsApp con tu número de
+                    orden.
+                </p>
+            </details>
+
+            <details>
+                <summary>¿Cómo sé qué talla elegir?</summary>
+                <p>
+                    Cada producto tiene su tabla de tallas en la página de la colección.
+                    Si estás entre dos tallas, escríbenos con tu estatura y peso: te
+                    recomendamos una según el corte de la prenda.
+                </p>
+            </details>
+
+            <details>
+                <summary>¿Tienen prendas disponibles para entrega inmediata?</summary>
+                <p>
+                    Trabajamos por series pequeñas, así que la disponibilidad cambia
+                    rápido. La colección muestra siempre lo que está en stock; si algo se
+                    agota, puedes preguntarnos por la próxima producción.
+                </p>
+            </details>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- LLAMADO A LA ACCIÓN                        -->
+    <!-- ========================================== -->
+    <section class="cta-band">
+        <h2>Tu estilo, sin límites</h2>
+        <p>Mientras nos escribes, puedes ir mirando lo que tenemos para ti.</p>
+        <div class="btn-row">
+            <a href="index.html#coleccion" class="btn btn-solid">Ver colección</a>
+            <a href="nosotros.html" class="btn">Sobre nosotros</a>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- FOOTER: Pie de página                      -->
+    <!-- ========================================== -->
+    <footer>
+        <p>&copy; 2024 KANDRE. Estilo sin límites.</p>
+        <p class="footer-sub">Kendry &amp; Andrés</p>
+        <nav class="footer-nav" aria-label="Navegación del pie de página">
+            <a href="index.html">Inicio</a>
+            <a href="index.html#coleccion">Colección</a>
+            <a href="nosotros.html">Nosotros</a>
+            <a href="contacto.html">Contacto</a>
+        </nav>
+    </footer>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/contacto.js"></script>
+</body>
+</html>
