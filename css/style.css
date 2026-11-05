@@ -495,19 +495,51 @@ nav ul li a.active {
     padding-bottom: 0;
 }
 
-/* --- Cifras --- */
+/* --- Cifras ---
+   IMPORTANTE: esta banda es fluida. Se adapta sola a cuantas
+   tarjetas .stat haya (1, 2, 3, 4...) sin dejar huecos negros.
+
+   Antes el fondo del contenedor era negro y el hueco de 2px entre
+   columnas hacía las líneas separadoras. El problema: si quitabas
+   una .stat, su columna seguía existiendo (repeat(4, 1fr)) y el
+   fondo negro se veía a través del hueco.
+
+   Ahora:
+   - auto-fit colapsa las columnas vacías.
+   - minmax(180px, 1fr) reparte el ancho entre las que quedan.
+   - El fondo es beige y los separadores son bordes de cada .stat.
+*/
 .stats-band {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2px;
-    background-color: var(--negro);
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    background-color: var(--beige);
     border-bottom: 2px solid var(--negro);
 }
 
+/* Altura fluida: cada celda crece con su contenido y centra el
+   texto verticalmente aunque una cifra tenga más líneas que otra. */
 .stat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     background-color: var(--beige);
     padding: 2.5rem 1.5rem;
     text-align: center;
+}
+
+/* Separadores verticales finos entre cifras.
+   Solo en pantallas donde normalmente caben todas en una fila;
+   así en móvil no aparece una línea pegada al borde izquierdo. */
+@media (min-width: 900px) {
+    .stat + .stat {
+        border-left: 2px solid var(--negro);
+    }
+}
+
+/* Si borras TODAS las cifras, la banda desaparece en vez de dejar
+   una línea negra suelta (navegadores modernos con :has()). */
+.stats-band:not(:has(.stat)) {
+    display: none;
 }
 
 .stat strong {
@@ -1068,9 +1100,9 @@ nav ul li a.active {
         position: static;
     }
 
-    .stats-band {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /* Nota: .stats-band ya no fija columnas aquí. Su
+       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))
+       calcula solo cuántas caben, aunque borres cifras. */
 }
 
 @media (max-width: 768px) {
@@ -1110,7 +1142,13 @@ nav ul li a.active {
     }
 
     .stats-band {
-        grid-template-columns: 1fr;
+        /* En móvil el espacio es justo: reducimos el relleno de cada
+           cifra, pero la banda sigue ajustándose sola al contenido. */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .stat {
+        padding: 2rem 1rem;
     }
 
     .cta-band h2 {
@@ -1299,5 +1337,21 @@ nav ul li a.active {
     .toast {
         bottom: 1rem;
         font-size: 0.7rem;
+    }
+}
+
+/* ==========================================
+   BANDA DE CIFRAS EN PANTALLAS MUY PEQUEÑAS
+   Con una sola columna, cualquier cantidad de
+   .stat (1, 2, 3...) se ve simétrica: no quedan
+   celdas vacías al final de una fila.
+   ========================================== */
+@media (max-width: 480px) {
+    .stats-band {
+        grid-template-columns: 1fr;
+    }
+
+    .stat {
+        padding: 1.75rem 1rem;
     }
 }

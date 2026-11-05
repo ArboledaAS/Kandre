@@ -76,7 +76,7 @@ const PRODUCTOS = [
         precio: null,        // TODO: reemplaza null por el precio real, ej. 160000
         etiqueta: null,      // Ej.: 'Nuevo' si quieres resaltarla
         // [AQUÍ PUEDES AGREGAR LA DESCRIPCIÓN DE LA PRENDA]
-        descripcion: '',
+        descripcion: 'Buena enlogacion, Calidad gruesa,Variedad de colores',
         colores: [
             {
                 nombre: 'Azul cielo',
@@ -109,7 +109,7 @@ const PRODUCTOS = [
         precio: null,        // TODO: reemplaza null por el precio real, ej. 85000
         etiqueta: null,
         // [AQUÍ PUEDES AGREGAR LA DESCRIPCIÓN DE LA PRENDA]
-        descripcion: '',
+        descripcion: 'Americanos, Teala Rib Gruesa, Push Up, No marca celulitis, No transpatenta',
         colores: [
             {
                 nombre: 'Negro',
@@ -131,7 +131,7 @@ const PRODUCTOS = [
         precio: null,        // TODO: reemplaza null por el precio real
         etiqueta: null,
         // [AQUÍ PUEDES AGREGAR LA DESCRIPCIÓN DE LA PRENDA]
-        descripcion: '',
+        descripcion: 'No transparenta, Tela Americana, Excelente elongacion, super comodo',
         colores: [
             {
                 nombre: 'Azul Cielo',
@@ -159,7 +159,7 @@ const PRODUCTOS = [
         precio: null,        // TODO: reemplaza null por el precio real
         etiqueta: null,
         // [AQUÍ PUEDES AGREGAR LA DESCRIPCIÓN DE LA PRENDA]
-        descripcion: '',
+        descripcion: 'Push up, Colores divinos, Control abdomen, No transparenta',
         colores: [
             {
                 nombre: 'Azul cielo',
@@ -188,7 +188,7 @@ const PRODUCTOS = [
         precio: null,        // TODO: reemplaza null por el precio real
         etiqueta: null,
         // [AQUÍ PUEDES AGREGAR LA DESCRIPCIÓN DE LA PRENDA]
-        descripcion: '',
+        descripcion: 'Push up, Control abdomen, No transparenta',
         colores: [
             {
                 nombre: 'Azul oscuro',
@@ -221,7 +221,7 @@ const PRODUCTOS = [
         precio: null,        // TODO: reemplaza null por el precio real
         etiqueta: null,
         // [AQUÍ PUEDES AGREGAR LA DESCRIPCIÓN DE LA PRENDA]
-        descripcion: '',
+        descripcion: 'No transparenta, No marca celulitis, Excelente elongacion, Control abdomen',
         colores: [
             {
                 nombre: 'Azul claro',

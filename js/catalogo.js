@@ -30,7 +30,7 @@
         idGrilla: 'product-grid',        // contenedor de las tarjetas
         idFiltros: 'catalog-filters',    // contenedor de los filtros
         imagenRespaldo: 'img/placeholder.svg',
-        textoDescripcionPendiente: '[AQUÍ PUEDES AGREGAR LA DESCRIPCIÓN DE LA PRENDA]'
+        textoDescripcionPendiente: '[LA DESCRIPCIÓN DE LA PRENDA]'
     };
 
     /* ==========================================================
